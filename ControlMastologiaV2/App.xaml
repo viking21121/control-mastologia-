@@ -1,0 +1,27 @@
+﻿<Application x:Class="ControlMastologiaV2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ControlMastologiaV2"
+             StartupUri="LoginWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="local:LoginWindow">
+            <Setter Property="Background" Value="#FFD1DC"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+        </Style>
+
+        <Style TargetType="local:PatientRegistrationWindow">
+            <Setter Property="Background" Value="#FFD1DC"/>
+            <Setter Property="BorderBrush" Value="#AED6F1"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+        </Style>
+
+        <Style TargetType="local:DiagnosticWindow">
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#FFD1DC"/>
+            <Setter Property="BorderBrush" Value="#AED6F1"/>
+        </Style>
+    </Application.Resources>
+</Application>

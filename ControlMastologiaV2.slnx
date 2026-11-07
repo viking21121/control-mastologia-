@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../linerys 1.1/ControlMastologia.Data/ControlMastologia.Data.csproj" />
+  <Project Path="ControlMastologiaV2/ControlMastologiaV2.csproj" />
+</Solution>

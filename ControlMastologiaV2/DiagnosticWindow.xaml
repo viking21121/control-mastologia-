@@ -1,0 +1,53 @@
+﻿<Window x:Class="ControlMastologiaV2.DiagnosticWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Historial del Paciente" Height="750" Width="450" WindowState="Maximized">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Margin="20">
+        <Button x:Name="btnVolver" Content="Volver al Registro" Click="BtnVolver_Click" Margin="0,0,0,10" Background="LightGray"/>
+
+        <TextBlock Text="Historial Médico:" FontWeight="Bold"/>
+        <TextBox x:Name="txtHistorial" IsReadOnly="True" Height="150" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10" Background="#F0F0F0"/>
+
+        <TextBlock Text="Seleccione consulta para informe:" FontWeight="Bold" Margin="0,5,0,0"/>
+        <ComboBox x:Name="cmbConsultas" Height="25" Margin="0,0,0,10" SelectionChanged="CmbConsultas_SelectionChanged"/>
+            <TextBlock Text="Tipo de Informe:" FontWeight="Bold" Margin="0,5,0,0"/>
+            <ComboBox x:Name="cmbTipoInforme" Height="25" Margin="0,0,0,10" SelectionChanged="CmbTipoInforme_SelectionChanged">
+                <ComboBoxItem Content="Informe Médico"/>
+                <ComboBoxItem Content="Eco Mamario"/>
+                <ComboBoxItem Content="Eco Ginecológico"/>
+            </ComboBox>
+            <!-- PANEL 1: INFORME MÉDICO -->
+            <StackPanel x:Name="pnlInformeMedico" Visibility="Visible">
+                <TextBlock Text="Nuevo Diagnóstico:" FontWeight="Bold"/>
+                <TextBox x:Name="txtDiagnostico" Height="80" Margin="0,0,0,5"/>
+
+                <TextBlock Text="Tratamiento:" FontWeight="Bold"/>
+                <TextBox x:Name="txtTratamiento" Height="80" Margin="0,0,0,10"/>
+            </StackPanel>
+
+            <!-- PANEL 2: ECO MAMARIO -->
+            <StackPanel x:Name="pnlEcoMamario" Visibility="Collapsed">
+                <TextBlock Text="Examen Físico:" FontWeight="Bold"/>
+                <TextBox x:Name="txtExamenFisicoMamario" Height="50"/>
+                <TextBlock Text="Hallazgos Ecográficos:" FontWeight="Bold"/>
+                <TextBox x:Name="txtHallazgosMamario" Height="60"/>
+                <TextBlock Text="Conclusiones y Recomendaciones:" FontWeight="Bold"/>
+                <TextBox x:Name="txtConclusionesMamario" Height="60"/>
+            </StackPanel>
+
+            <!-- PANEL 3: ECO GINECOLÓGICO -->
+            <StackPanel x:Name="pnlEcoGinecologico" Visibility="Collapsed">
+                <TextBlock Text="Hallazgos:" FontWeight="Bold"/>
+                <TextBox x:Name="txthallazgos" Height="50"/>
+                <TextBlock Text="Ecosonograma Ginecológico:" FontWeight="Bold"/>
+                <TextBox x:Name="txtHallazgosGineco" Height="80"/>
+                <TextBlock Text="Conclusión y Recomendaciones:" FontWeight="Bold"/>
+                <TextBox x:Name="txtConclusionesGineco" Height="80"/>
+            </StackPanel>
+
+            <Button x:Name="btnGuardar" Content="Guardar Consulta" Click="BtnGuardar_Click" Background="LightBlue" Margin="0,0,0,5"/>
+        <Button x:Name="btnGenerar" Content="Generar Informe Seleccionado" Click="BtnGenerar_Informe_Click" Background="LightGreen" FontWeight="Bold"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

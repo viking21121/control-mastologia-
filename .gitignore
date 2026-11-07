@@ -1,0 +1,26 @@
+## .NET Core / Visual Studio .gitignore
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Publish / Deployment outputs
+publish/
+*.pubxml
+*.pubxml.user
+PublishProfiles/
+**/PublishProfiles/**
+**/[Pp]ublish[Pp]rofiles/**
+
+# Rider / VS Code
+.idea/
+.vscode/

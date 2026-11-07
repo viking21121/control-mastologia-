@@ -1,0 +1,96 @@
+﻿<Window x:Class="ControlMastologiaV2.PatientRegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Registro de Paciente" Height="950" Width="450" WindowState="Maximized">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+            <TextBlock Text="Ficha de Identificación" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <Label Content="Cédula (Buscar):"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="txtCedula" Width="280" Margin="0,0,5,10"/>
+                <Button Content="Buscar" Width="80" Height="25" Click="BtnBuscar_Click" Background="#3498db" Foreground="White"/>
+            </StackPanel>
+            <Label Content="Fecha de Nacimiento:"/>
+            <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Width="200"/>
+            <Label Content="Nombres y Apellidos:"/>
+            <TextBox x:Name="txtNombre" Margin="0,0,0,10"/>
+            <Label Content="Sexo:"/>
+            <ComboBox x:Name="cmbSexo" Margin="0,0,0,10">
+                <ComboBoxItem Content="Femenino"/>
+                <ComboBoxItem Content="Masculino"/>
+            </ComboBox>
+
+            <Label Content="Correo Electrónico:"/>
+            <TextBox x:Name="txtCorreo" Margin="0,0,0,10"/>
+
+            <Label Content="Enfermedad actual:"/>
+            <TextBox x:Name="txtEnfermedad" Height="60" AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,15"/>
+            <Separator Margin="0,10"/>
+            <Label Content="Antecedentes Personales:"/>
+            <TextBox x:Name="txtAntPersonales" Height="60" TextWrapping="Wrap" Margin="0,0,0,10"/>
+            <Label Content="Antecedentes Familiares:"/>
+            <TextBox x:Name="txtAntFamiliares" Height="60" TextWrapping="Wrap" Margin="0,0,0,10"/>
+            <TextBlock Text="Datos de la Consulta" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <Label Content="Motivo de la consulta:"/>
+            <TextBox x:Name="txtMotivo" Height="60" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,10"/>
+
+            <CheckBox x:Name="chkEmbarazada" Content="¿Está embarazada?" IsChecked="{Binding embarazada, Mode=TwoWay}" Margin="0,5"/>
+
+            <CheckBox x:Name="chkGestas" Content="¿Tiene antecedentes obstétricos?" Margin="0.5" Checked="ChkGestas_Checked" Unchecked="ChkGestas_Unchecked"/>
+            
+            <StackPanel x:Name="pnlGestas" Visibility="Collapsed" Margin="20,5,0,10" Background="#f9f9f9">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Gestas:"/>
+                    <TextBox x:Name="txtGestas" Grid.Column="1" Width="50" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Partos:"/>
+                    <TextBox x:Name="txtPartos" Grid.Column="1" Width="50" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Abortos:"/>
+                    <TextBox x:Name="txtAbortos" Grid.Column="1" Width="50" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Cesareas:"/>
+                    <TextBox x:Name="txtCesareas" Grid.Column="1" Width="50" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Embarazo ectópico:"/>
+                    <TextBox x:Name="txtEmbarazoEctopico" Grid.Column="1" Width="50" HorizontalAlignment="Left"/>
+                </Grid>
+            </StackPanel>
+
+            
+            <Button x:Name="btnGuardar" Content="Guardar y Continuar" Background="#27ae60" Foreground="White" 
+                    FontWeight="Bold" Height="40" Click="BtnGuardar_Click"/>
+        <Button x:Name="btnVolver" Content="Volver al Inicio" Background="#e74c3c" Foreground="White" 
+                    FontWeight="Bold" Height="40" Click="BtnVolver_Click" Margin="0,10,0,0"/>
+            <Button Content="Hacer Respaldo" Click="BtnRespaldo_Click" Background="Orange" Margin="10"/>
+        </StackPanel>
+        
+    </ScrollViewer>
+</Window>
